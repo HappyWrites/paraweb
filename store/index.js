@@ -17,8 +17,12 @@ export const mutations = {
     state.filterOnAuthorIsActive = !state.filterOnAuthorIsActive;
   },
 
-  toggleFilterCardsWithDesiredAuthor(state) {
-    state.filterCardsWithDesiredAuthor = !state.filterCardsWithDesiredAuthor;
+  activateFilterCardsWithDesiredAuthor(state) {
+    state.filterCardsWithDesiredAuthor = true;
+  },
+
+  lockFilterCardsWithDesiredAuthor(state) {
+    state.filterCardsWithDesiredAuthor = false;
   },
 
   getSearchAuthor(state, author) {
@@ -55,7 +59,6 @@ export const getters = {
   },
 
   getCardsWithDesiredDate(state) {
-    console.log(state.searchDate)
     const onlyFrom = state.searchDate[0].length > 0 && state.searchDate[1].length === 0;
     const onlyBefore = state.searchDate[0].length === 0 && state.searchDate[1].length > 0;
     const fromAndBefore = state.searchDate[0].length > 0 && state.searchDate[1].length > 0;

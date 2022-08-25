@@ -13,7 +13,7 @@ export default {
   methods: {
     searchAuthor(author) {
       this.$store.commit('getSearchAuthor', author)
-      this.$store.commit('toggleFilterCardsWithDesiredAuthor')
+      this.$store.commit('activateFilterCardsWithDesiredAuthor')
       this.$store.commit('toggleFilterOnAuthor')
     }
   }

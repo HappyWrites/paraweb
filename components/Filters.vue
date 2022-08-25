@@ -36,6 +36,7 @@ export default {
   methods: {
     toggleFilterOnAuthor() {
       this.$store.commit('toggleFilterOnAuthor');
+      this.$store.commit('lockFilterCardsWithDesiredAuthor')
     },
 
     changeInput() {
